@@ -13,7 +13,7 @@ async function startApolloServer(typeDefs, resolvers) {
       };
     },
   });
-  //para producción necesitamos decirle un puerto el cual lo seteamos en .env
+  //para producción necesitamos decirle un puerto el cual lo seteamos en .env, como hicimos deploy en heroku el mismo configura el puerto para usar, simplemente con process.env.PORT le decimos que lo que sea que este en esa variable lo agarre
   const { url, port } = await server.listen({port: process.env.PORT || 4000});
   console.log(`
       🚀  Server is running
